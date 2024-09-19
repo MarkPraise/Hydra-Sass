@@ -359,6 +359,9 @@ body{
 
 .footer .footer-flex>div{
     padding-inline: 3rem;
+
+    display: flex;
+    align-items: center;
 }
 
 .footer .footer-flex>.nav{
@@ -388,6 +391,7 @@ body{
 
 .footer .footer-flex>.nav:last-child ul{
     flex-direction: row;
+    gap: 1.5rem;
     margin: 2rem 0;
 }
 
@@ -482,3 +486,9 @@ body{
     font-size: 1.6rem;
 }
 
+
+
+/* || MEDIA QUERIES */
+
+
+/* ||MEDIA QUERY FOR SMALL SCREEN DEVICES */
