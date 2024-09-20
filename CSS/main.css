@@ -29,7 +29,6 @@ input,button,textarea{
 }
 html{
     scroll-behavior: smooth;
-    /* overflow-x: hidden; */
 }
 
 
@@ -39,6 +38,8 @@ body{
     font-family: "Montserrat","sans-serif";
     font-size: 16px;
     line-height: 1.4; 
+
+    overflow-x: hidden;
 }
 
 
@@ -694,6 +695,8 @@ body{
         border-radius: 5rem;
         font-size: 1rem;
         padding: 2rem;
+
+        background-position: 20% top;
     }
 
     .tech .container>div:first-child .header-break{
@@ -709,13 +712,13 @@ body{
     }
 
     .tech .container .tech-flex-container>button.btn-white:nth-child(1){
-        left: 0;
+        left: -15px;
         top: 45%;
         padding: 10px;
     }
 
     .tech .container .tech-flex-container>button.btn-white:nth-child(2){
-        right: 0;
+        right: -15px;
         top: 45%;
         padding: 10px;
     }
@@ -806,6 +809,7 @@ body{
 
     .footer .footer-flex>.nav:last-child{
         display: flex;
+        flex-flow: column nowrap;
         padding-left: 0;
     }
 
@@ -815,8 +819,8 @@ body{
     }
 
     .footer .footer-flex>.nav:last-child ul{
-        flex-grow: 1;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        gap: 0.45rem;
     }
 
     .footer .footer-flex>.nav:last-child ul i{
@@ -839,8 +843,8 @@ body{
 
     /* UTILITY  STYLES*/
     .container{
-        max-width: 80%;
-        /* margin: 0 auto 3rem; */
+        max-width: 90%;
+        margin: 0 auto 3rem;
     }
 
     .container .displayNone{
