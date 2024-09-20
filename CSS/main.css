@@ -27,13 +27,18 @@ input,button,textarea{
     --purple-Text-Color:#C0B7E8;
     --btn-text-color:#343045;
 }
+html{
+    scroll-behavior: smooth;
+    /* overflow-x: hidden; */
+}
+
 
 body{
     background-color: var(--Body-Background-Color);
     color: var(--white-text-Color);
     font-family: "Montserrat","sans-serif";
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 1.4; 
 }
 
 
@@ -50,6 +55,10 @@ body{
 .hero .hero-header div{
     display: flex;
     align-items: center;
+}
+                      /*This has to do with the mobile screen*/
+.hero .hero-header div.hamburger-container{
+    display: none;
 }
 .hero .hero-header img{
     width: 50%;
@@ -85,6 +94,23 @@ body{
     border-radius: 3.5rem;
     background-image: radial-gradient(#3A3456,#2A263C,#211E2E);
     padding: 2rem;
+
+    position: relative;
+}
+
+.hero-footer button{
+    position: absolute;
+}
+
+.hero-footer button:first-child{
+    top: 38%;
+    left: 8px;
+}
+
+.hero-footer button:nth-child(2){
+    top: 38%;
+    right: 8px;
+    
 }
 
 .hero-footer span{
@@ -118,7 +144,10 @@ body{
 .hero-body .hero-image {
     display: flex;
     justify-content: flex-end;
-    
+}
+
+.hero .container .hero-footer button{
+    display: none;
 }
 
 .hero-body .hero-image img{
@@ -203,6 +232,9 @@ body{
     margin: 4rem 0 0;
     gap: 1rem;
 }
+.services .container .service-card-containers>.btn-white{
+    display: none;
+}
 .profile-pic img{
    width: 100%;
    height: auto;
@@ -258,6 +290,12 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+}
+
+.tech .container .tech-flex-container>.btn-white{
+    position: absolute;
+    display: none;
 }
 
 /* || PROCESS (HOW TO) SECTION  STYLES*/
@@ -274,9 +312,13 @@ body{
     margin-top: 10rem;
     display: flex;
     justify-content: space-between;
-
+    flex-wrap: wrap;
 
     position: relative;
+}
+.process .container .process-flex-container button.btn-white{
+    position: absolute;
+    display: none;
 }
 
 .process .process-flex-container>div{
@@ -355,6 +397,7 @@ body{
     margin-bottom: 2rem;
 
     font-weight: 600;
+    flex-wrap: wrap;
 }
 
 .footer .footer-flex>div{
@@ -373,7 +416,6 @@ body{
     flex-direction: column;
     align-items: center;
     height: min-content;
-
 }
 
 
@@ -393,6 +435,13 @@ body{
     flex-direction: row;
     gap: 1.5rem;
     margin: 2rem 0;
+}
+
+.footer .footer-flex>.nav:last-child ul a{
+    background-color: #211E2E;
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 50%;
 }
 
 .footer a{
@@ -451,13 +500,14 @@ body{
 
 .header-break{
     font-weight: 200;
-    font-size:2rem ;
+    font-size:1.5rem ;
+    margin-top: 1.4rem;
     letter-spacing: 2.5px;
     word-spacing: 3px;
 }
 
 .container{
-    max-width: 1200px;
+    max-width: min(80vw,1200px);
     margin: 0 auto 5rem;
 }
 
@@ -478,6 +528,13 @@ body{
     font-weight: bold;
 }
 
+.btn-white{
+    padding: 4px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 1.5rem;
+}
+
 .text-lg{
     font-size: 2.3rem;
 }
@@ -486,9 +543,315 @@ body{
     font-size: 1.6rem;
 }
 
+.text-center{
+    text-align: center;
+}
+
+.hamburger-container{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.hamburger-button
+{
+    border: 2px solid;
+    width: 2rem;
+}
+.hamburger-button:nth-child(2){
+    width: 1.8rem;
+    margin: 10px 0;
+}
 
 
 /* || MEDIA QUERIES */
 
 
 /* ||MEDIA QUERY FOR SMALL SCREEN DEVICES */
+
+@media (max-width:576px) {
+    /* HERO STYLES */
+
+    .hero .hero-header div.hamburger-container{
+        display: block;
+    }
+
+    .hero .hero-body{
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 0;
+        gap: 2rem;
+    }
+
+    .hero .hero-body .hero-image{
+        order: -1;
+        justify-content: center;
+    }
+
+    .hero .hero-body .hero-image img{
+        width:100%;
+    }
+    .hero .hero-body .hero-body-desc{
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero .hero-body .hero-body-desc>div>a.btn{
+        padding: 1rem 3rem;
+    }
+    
+   /* HERO FOOTER */
+    .hero-footer span{
+        padding: 0;
+        border: 0;
+    }
+
+    .hero .hero-footer button.btn-white{
+        display: block;
+    }
+
+    /* ||   ABOUT STYLES */
+    .about .container{
+        grid-template-columns: 1fr;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .about .about-header{
+        order: -3;
+        text-align: center;
+    }
+    .about .about-header .header-utility{
+        justify-content: center;
+    }
+    .about .about-imageContainer{
+        order: -2;
+
+    }
+
+    .about .about-imageContainer{
+        width: 100%;
+        height: auto;
+        
+        display: flex;
+        justify-content: center;
+    }
+
+    .about .about-section a{
+        justify-content: flex-start;
+        align-self: center;
+        padding: 1rem 3rem;
+    }
+
+    /* || SERVICES */
+
+    .services .container{
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    .services .container header{
+        flex-basis: 100%;
+        align-self: center;
+        text-align: center;
+
+        flex-grow: 1;
+    }
+    
+    .services .container .service-card-containers{
+        justify-content: center;
+        margin-top: 2rem;
+
+        position: relative;
+    }
+
+    .services .container .service-card-containers>.btn-white{
+        display: block;
+        position: absolute;
+    }
+
+    .services .container .service-card-containers>.btn-white:nth-child(1){
+        left: 0.9rem;
+        top: 45%;
+        padding: 10px;
+    }
+
+    .services .container .service-card-containers>.btn-white:nth-child(2){
+        right: 0.9rem;
+        top: 45%;
+        padding: 10px;
+    }
+
+    .services .container .service-card-containers .card{
+        flex-basis: 85%;
+    }
+
+    /* || TECH */
+    .tech .container>div:first-child{
+        height: 20%;
+        border-radius: 5rem;
+        font-size: 1rem;
+        padding: 2rem;
+    }
+
+    .tech .container>div:first-child .header-break{
+        font-size: 1rem;
+    }
+
+    .tech .container .tech-flex-container{
+        justify-content: center;
+    }
+
+    .tech .container .tech-flex-container button.btn-white{
+        display: inline;
+    }
+
+    .tech .container .tech-flex-container>button.btn-white:nth-child(1){
+        left: 0;
+        top: 45%;
+        padding: 10px;
+    }
+
+    .tech .container .tech-flex-container>button.btn-white:nth-child(2){
+        right: 0;
+        top: 45%;
+        padding: 10px;
+    }
+
+
+    .tech .container span.circle-bg{
+        display: none;
+    }
+
+    /* || PROCESS SECTION */
+    .process .container{
+        text-align: center;
+    }
+    .process .container .process-header span.header-utility{
+        display: inline-block;
+    }
+    .process .container .process-header{
+        flex-basis: 100%;
+    }
+
+    .process .container .process-flex-container{
+        margin-top: 4rem;
+        justify-content: center;
+    }
+
+    .process .container .process-flex-container button.btn-white{
+        position: absolute;
+        display: inline;
+    }
+
+    .process .container .process-flex-container>button.btn-white:nth-child(1){
+        left: 0;
+        top: 45%;
+        padding: 10px;
+    }
+
+    .process .container .process-flex-container>button.btn-white:nth-child(2){
+        right: 0;
+        top: 45%;
+        padding: 10px;
+    }
+    .process .container .process-flex-container>div>span{
+        margin: 4rem auto 0;
+    }
+    /* JOIN AND THE FORM SECTION */
+    .join .container{
+        padding: 1rem;
+    }
+
+    .join .container h2{
+        width: 50%;
+        padding: 0;
+        margin: 2rem auto;
+    }
+    .join .container p{
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .join .container .join_form input[name="firstName"],
+    .join .container .join_form input[name="lastName"],
+    .join .container .join_form input[name="email"],
+    .join .container .join_form input[name="phoneNumber"]{
+        flex-basis: 100%;
+        margin-bottom: 0;
+    }
+
+
+    .join .container .join_form input[name="subject"],
+    .join .container .join_form textarea{
+        margin-bottom: 0;
+    }
+
+    .join .container button.btn{
+        width: 100%;
+        margin: 2rem 0;
+    }
+
+
+    /* MAIN PAGE FOOTER */
+    .footer .footer-flex{
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        font-weight: 400;
+        font-size: 10px;
+    }
+
+    .footer .footer-flex>.nav:last-child{
+        display: flex;
+        padding-left: 0;
+    }
+
+
+    .footer .footer-flex>.nav:last-child h2{
+        text-align: center;
+    }
+
+    .footer .footer-flex>.nav:last-child ul{
+        flex-grow: 1;
+        justify-content: space-evenly;
+    }
+
+    .footer .footer-flex>.nav:last-child ul i{
+        font-size: 1.3rem;
+    }
+
+    .footer .footer-flex>.nav:last-child a.btn{
+        display: block;
+        width: 80%;
+        text-align: center;
+        padding: 1rem;
+    }
+    .footer .footer-flex>.nav{
+        display: none;
+        border-left: 0;
+    }
+
+
+
+
+    /* UTILITY  STYLES*/
+    .container{
+        max-width: 80%;
+        /* margin: 0 auto 3rem; */
+    }
+
+    .container .displayNone{
+        display: none;
+    }
+    .text-lg{
+        font-size: 1.8rem;
+    }
+    .header-break{
+        font-size: 1.6rem;
+    }
+
+
+}
